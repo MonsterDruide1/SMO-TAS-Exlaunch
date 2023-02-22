@@ -22,6 +22,7 @@
 #include "PlayerModelChangerHakoniwa.h"
 #include "PlayerFormSensorCollisionArranger.h"
 #include "PlayerInitInfo.h"
+#include "PlayerDamageKeeper.h"
 
 #include "Attacks/PlayerSpinCapAttack.h"
 
@@ -64,7 +65,10 @@ public:
     // 0x1E8 unk
     // 0x1F0 unk
     // 0x1F8 PlayerBindKeeper
-    unsigned char padding_208[0x208 - 0x180];
+    //unsigned char padding_208[0x208 - 0x180];
+    unsigned char padding_190[0x198 - 0x180];
+    PlayerDamageKeeper* mDamageKeeper; // 0x198
+    unsigned char padding_208[0x208 - 0x200];
     PlayerHackKeeper *mHackKeeper; // 0x208
     PlayerFormSensorCollisionArranger *mCollArranger; // 0x210
     void *unkPtr2; // 0x218
